@@ -1,0 +1,22 @@
+  body {
+      display: none;
+  }
+
+  img {
+      cursor: pointer;
+      position: relative;
+  }
+
+  img:hover {
+      border: 2px solid red;
+  }
+
+  img[src=""] {
+      display: none;
+  }
+
+  canvas {
+      border: 2px solid #000;
+      cursor: crosshair;
+      margin-top: 1em;
+  }
