@@ -3,7 +3,7 @@ const options = {
     version: 1,
     alpha: 0.25,
     topk: 3,
-    learningRate: 0.00001,
+    learningRate: 0.0001,
     hiddenUnits: 100,
     epochs: 300,
     numLabels: 2,
@@ -29,6 +29,9 @@ function classify(imageData) {
 
     classifier.classify(imageData, (err, result) => {
         console.log(result);
+
+        document.querySelector('.result').innerText = result[0].label;
+
     });
 }
 
@@ -36,6 +39,7 @@ function train(argument) {
     classifier.train((lossValue) => {
         document.querySelector("h2 span").innerText = (lossValue) ? lossValue : "Entrainement terminé";
         console.log('Loss is', lossValue);
+
     });
 };
 
